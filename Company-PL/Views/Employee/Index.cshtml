@@ -1,0 +1,44 @@
+﻿@using Company_DAL.Models
+@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "All";
+}
+
+<h1 class="mt-5">All Employee</h1>
+<br />
+<br />
+<a asp-controller="Employee" asp-action="Create" class="btn btn-outline-primary mt-4 mb-4">Add Employee</a>
+
+@if(@Model.Count()>0)
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(D => D.Id)</th>
+                <th>@Html.DisplayNameFor(D => D.Name)</th>
+                <th>@Html.DisplayNameFor(D => D.HiringDate)</th>
+                <th>Details</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Employee in Model)
+            {
+                <tr>
+                    <td>@Employee.Id</td>
+                    <td>@Employee.Name</td>
+                    <td>@Employee.HiringDate</td>
+                    <td><a asp-controller="Employee" asp-action="Details" asp-route-id="@Employee.Id" class="btn btn-info">Details <i class="fa-regular fa-eye"></i></a></td>
+                    <td><a asp-controller="Employee" asp-action="Update" asp-route-id="@Employee.Id" class="btn btn-success">Update <i class="fa-solid fa-pen"></i></a></td>
+                    <td><a asp-controller="Employee" asp-action="Delete" asp-route-id="@Employee.Id" class="btn btn-danger">Delete <i class="fa-solid fa-trash-can"></i></a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h1 class="mt-5 text-danger alert-danger p-3">You Don't Have Any Employee</h1>
+}
+

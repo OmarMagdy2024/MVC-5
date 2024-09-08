@@ -1,0 +1,26 @@
+﻿@using Company_DAL.Models
+
+@model Employee
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="mt-4">Details for Employee</h1>
+<br />
+<br />
+<form>
+    <div class="mb-3">
+        <label asp-for="Name">Name :</label>
+        <input readonly type="text" asp-for="Name" placeholder="Name Of Employee" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="HiringDate">Hiring Date :</label>
+        <input readonly asp-for="HiringDate" class="form-control" />
+    </div> 
+    <div>
+        <label asp-for="DepartmentId">Department Id :</label>
+        <input readonly asp-for="DepartmentId" class="form-control" />
+    </div>
+    <a asp-controller="Employee" asp-action="Update" class="btn btn-outline-info pt-2 pb-2 pl-5 pr-5 mt-3">Update Department</a>
+    <a asp-controller="Employee" asp-action="Index" class="btn btn-outline-primary pt-2 pb-2 pl-5 pr-5 mt-3">Back To List</a>
+</form>

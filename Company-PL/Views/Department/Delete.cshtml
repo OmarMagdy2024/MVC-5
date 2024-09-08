@@ -1,0 +1,41 @@
+﻿@using Company_DAL.Models
+
+@model Department
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="mt-4">Delete Department</h1>
+<br />
+<br />
+<form asp-action="Delete">
+    <div class="mb-3">
+        <label asp-for="Name">Name :</label>
+        <input readonly type="text" asp-for="Name" placeholder="Name Of Department" class="form-control" />
+    </div>
+    <div>
+        <label asp-for="DateOfCreation">Date Of Creation :</label>
+        <input readonly asp-for="DateOfCreation" class="form-control" />
+    </div>
+
+    <button type="button" class="btn btn-outline-danger pt-2 pb-2 pl-5 pr-5 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Department</button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" value="Delete Department" class="btn btn-outline-danger pt-2 pb-2 pl-5 pr-5 mt-3" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a asp-controller="Department" asp-action="Index" class="ml-2 btn btn-outline-primary pt-2 pb-2 pl-5 pr-5 mt-3">Back To List</a>
+</form>
