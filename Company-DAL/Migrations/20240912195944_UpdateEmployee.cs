@@ -6,6 +6,12 @@ namespace Company_DAL.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AddColumn<string>(
+                name: "Address",
+                table: "Employees",
+                type: "nvarchar(max)",
+                nullable: true);
+
             migrationBuilder.AddColumn<int>(
                 name: "Age",
                 table: "Employees",
@@ -49,6 +55,10 @@ namespace Company_DAL.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropColumn(
+                name: "Address",
+                table: "Employees");
+
             migrationBuilder.DropColumn(
                 name: "Age",
                 table: "Employees");

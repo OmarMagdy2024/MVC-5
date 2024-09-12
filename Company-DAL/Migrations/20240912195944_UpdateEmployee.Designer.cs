@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Company_DAL.Migrations
 {
     [DbContext(typeof(CompanyDBContext))]
-    [Migration("20240912180233_UpdateEmployee")]
+    [Migration("20240912195944_UpdateEmployee")]
     partial class UpdateEmployee
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,6 +46,9 @@ namespace Company_DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Age")
                         .HasColumnType("int");
