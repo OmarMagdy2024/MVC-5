@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Company_BLL.Repositories
 {
-    internal class EmployeeRepository:GenaricRepository<Employee>,IEmployeeRepository
+    public class EmployeeRepository:GenaricRepository<Employee>,IEmployeeRepository
     {
         public EmployeeRepository(CompanyDBContext companyDBContext):base(companyDBContext) 
         {

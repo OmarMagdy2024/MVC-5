@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Company_BLL.Repositories
 {
-    internal class DepartmentRepository:GenaricRepository<Department>,IDepartmentRepository
+    public class DepartmentRepository:GenaricRepository<Department>,IDepartmentRepository
     {
         public DepartmentRepository(CompanyDBContext companyDBContext):base(companyDBContext)
         {

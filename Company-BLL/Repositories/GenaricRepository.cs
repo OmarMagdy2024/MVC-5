@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Company_BLL.Repositories
 {
-    internal class GenaricRepository<T>:IGenaricRepository<T> where T : class
+    public class GenaricRepository<T>:IGenaricRepository<T> where T : class
     {
         private protected readonly CompanyDBContext _companydbcontext;
         public GenaricRepository(CompanyDBContext companyDBContext)

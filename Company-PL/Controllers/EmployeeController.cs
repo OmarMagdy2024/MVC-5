@@ -39,6 +39,10 @@ namespace Company_PL.Controllers
         {
             return View(_employeeRepository.GetById(id));
         }
+        public IActionResult DetailAddress(string address)
+        {
+            return View(_employeeRepository.GetByAddress(address));
+        }
         public IActionResult Update(int id)
         {
             return View(_employeeRepository.GetById(id));
