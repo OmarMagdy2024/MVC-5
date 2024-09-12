@@ -23,7 +23,7 @@ namespace Company_PL.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Department department)
+        public IActionResult Create(T department)
         {
             if (ModelState.IsValid)
             {
@@ -45,7 +45,7 @@ namespace Company_PL.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update(Department department)
+        public IActionResult Update(T department)
         {
             if (ModelState.IsValid)
             {
@@ -63,7 +63,7 @@ namespace Company_PL.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(Department department)
+        public IActionResult Delete(T department)
         {
             if (ModelState.IsValid)
             {

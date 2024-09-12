@@ -17,7 +17,21 @@ namespace Company_DAL.Connection
 
         #region Property
         public DbSet<Department> departments { get; set; }
-        public DbSet<Employee> Employees { get; set; } 
+        public DbSet<Employee> Employees { get; set; }
+
+        public object AsNoTracking()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Employee>()
+                         .Property(e => e.Gender)
+                         .HasConversion(
+                         (Gender) => Gender.ToString(), (GenderString) => (Gender)Enum.Parse(typeof(Gender), GenderString,true)
+                         );
+        }
     }
 }
