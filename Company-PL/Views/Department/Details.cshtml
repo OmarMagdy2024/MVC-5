@@ -9,14 +9,7 @@
 <br />
 <br />
 <form>
-    <div class="mb-3">
-        <label asp-for="Name">Name :</label>
-        <input readonly type="text" asp-for="Name" placeholder="Name Of Department" class="form-control" />
-    </div>
-    <div>
-        <label asp-for="DateOfCreation">Date Of Creation :</label>
-        <input readonly asp-for="DateOfCreation" class="form-control" />
-    </div>
+    <partial name="_DepartmentReadOnlyParial"></partial>
     <a asp-controller="Department" asp-action="Update" class="btn btn-outline-info pt-2 pb-2 pl-5 pr-5 mt-3">Update Department</a>
     <a asp-controller="Department" asp-action="Index" class="btn btn-outline-primary pt-2 pb-2 pl-5 pr-5 mt-3">Back To List</a>
 </form>
