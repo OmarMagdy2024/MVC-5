@@ -24,6 +24,7 @@ namespace Company_DAL.Models
         [Required(ErrorMessage = "Name Is Required")]
         public string Name { get; set; }
 
+        [DataType(DataType.Currency)]
         [Required(ErrorMessage = "Salary Is Required")]
         public double Salary { get; set; }
 

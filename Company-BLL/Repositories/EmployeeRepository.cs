@@ -1,6 +1,7 @@
 ﻿using Company_BLL.Interfaces;
 using Company_DAL.Connection;
 using Company_DAL.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace Company_BLL.Repositories
             //_companydbcontext = companyDBContext;
         }
 
-        public IQueryable<Employee> GetbyAddress(string address)
+        public IQueryable<Employee> GetbyName(string name)
         {
-            return _companydbcontext.Employees.Where(e=>e.Address.ToLower().Contains(address.ToLower()));
+            return _companydbcontext.Employees.Where(e=>e.Name.ToLower().Contains(name.ToLower())).Include(e=>e.Department).AsNoTracking();
         }
     }
 }

@@ -9,6 +9,6 @@ namespace Company_BLL.Interfaces
 {
     public interface IEmployeeRepository:IGenaticRepository<Employee>
     {
-        public IQueryable<Employee> GetbyAddress(string address);
+        public IQueryable<Employee> GetbyName(string address);
     }
 }

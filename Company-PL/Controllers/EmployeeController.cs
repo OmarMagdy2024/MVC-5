@@ -15,9 +15,18 @@ namespace Company_PL.Controllers
             _employeeRepository = employeeRepository;
             //_departmentRepository = departmentRepository;
         }
-        public IActionResult Index()
+        public IActionResult Index(string Search)
         {
-            return View(_employeeRepository.GetAll());
+            if (string.IsNullOrEmpty(Search))
+            {
+                return View(_employeeRepository.GetAll());
+
+            }
+
+            else
+            {
+                return View(_employeeRepository.GetbyName(Search));
+            }
         }
 
         public IActionResult Create()
