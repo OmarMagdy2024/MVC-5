@@ -17,9 +17,9 @@ namespace Company_DAL.Models
         [EnumMember(Value = "Female")]
         Female=2
     }
-    public class Employee
+    public class Employee:ModelBase
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
 
         [Required(ErrorMessage = "Name Is Required")]
         public string Name { get; set; }

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Company_DAL.Models
 {
-    public class Department
+    public class Department:ModelBase
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
 
         [Required(ErrorMessage ="Name Is Required")]
         public string Name { get; set; }

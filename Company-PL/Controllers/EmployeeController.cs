@@ -8,9 +8,12 @@ namespace Company_PL.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
+        //private readonly IDepartmentRepository _departmentRepository;
+
         public EmployeeController(IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
+            //_departmentRepository = departmentRepository;
         }
         public IActionResult Index()
         {
@@ -19,6 +22,7 @@ namespace Company_PL.Controllers
 
         public IActionResult Create()
         {
+            //ViewBag.Department = _departmentRepository.GetAll();
             return View();
         }
 
