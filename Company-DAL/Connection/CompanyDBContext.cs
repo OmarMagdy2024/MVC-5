@@ -17,7 +17,15 @@ namespace Company_DAL.Connection
 
         #region Property
         public DbSet<Department> departments { get; set; }
-        public DbSet<Employee> Employees { get; set; } 
+        public DbSet<Employee> Employees { get; set; }
         #endregion
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Department>()
+                        .HasMany(d => d.Employess)
+                        .WithOne(e => e.Department)
+                        .OnDelete(DeleteBehavior.Cascade);
+        }
     }
 }

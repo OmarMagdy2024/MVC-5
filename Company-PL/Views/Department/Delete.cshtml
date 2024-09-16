@@ -9,14 +9,7 @@
 <br />
 <br />
 <form asp-action="Delete">
-    <div class="mb-3">
-        <label asp-for="Name">Name :</label>
-        <input readonly type="text" asp-for="Name" placeholder="Name Of Department" class="form-control" />
-    </div>
-    <div>
-        <label asp-for="DateOfCreation">Date Of Creation :</label>
-        <input readonly asp-for="DateOfCreation" class="form-control" />
-    </div>
+    <partial name="_DepartmentRadOnlyParial"></partial>
 
     <button type="button" class="btn btn-outline-danger pt-2 pb-2 pl-5 pr-5 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete Department</button>
 
